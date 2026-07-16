@@ -16,7 +16,8 @@
   html{ scroll-behavior:smooth; }
   body{ background:var(--bg); color:var(--ink); font-family:var(--gothic); -webkit-font-smoothing:antialiased; }
 
-  .band{ width:100%; padding:40px 30px; }
+  .band{ width:100%; padding:40px 30px; text-align:center; }
+  .txt{ text-align:center; }
   .band.cream{ background:var(--cream); }
   .band.dark{ background:var(--dark); }
   .col{ max-width:600px; margin:0 auto; text-align:center; }
@@ -26,7 +27,7 @@
   .kick{ font-size:10px; letter-spacing:.24em; color:var(--gold); margin-bottom:24px; }
   .rule{ width:26px; height:1.5px; background:var(--red); margin:22px auto; }
 
-  .fig{ width:190px; max-width:64%; height:auto; margin:0 auto 22px; display:block; border-radius:8px; }
+  .fig{ width:200px; max-width:66%; height:auto; margin:0 auto 18px; display:block; }
 
   .h1{ font-family:var(--mincho); font-size:23px; font-weight:600; line-height:1.9; letter-spacing:.04em; }
   .sub{ font-family:var(--mincho); font-size:15px; line-height:2.1; color:var(--ink-soft); }
@@ -66,8 +67,9 @@
     .split{ display:flex; align-items:center; gap:60px; max-width:900px; margin:0 auto; text-align:left; }
     .split.rev{ flex-direction:row-reverse; }
     .split .fig{ flex-shrink:0; margin:0; width:340px; }
-    .split .txt{ flex:1; }
-    .split .h, .split .t, .split .t2{ text-align:left; }
+    .split .txt{ flex:1; text-align:left; }
+    .split .h, .split .t, .split .t2, .split .h1, .split .sub, .split .num, .split .rule{ text-align:left; }
+    .split .rule{ margin-left:0; }
     .split .num{ text-align:left; }
     .cta{ width:auto; padding:18px 64px; }
   }
@@ -77,12 +79,14 @@
 
 <!-- 01 · A CENA -->
 <section class="band">
-  <div class="col">
-    <p class="num">01</p>
+  <div class="split">
     <img class="fig" src="fig1.png" alt="読む前の、うつむいた夜" loading="lazy">
-    <h1 class="h1">なぜ、<br>「いいですよ」と<br>言ってしまうのか。</h1>
-    <div class="rule"></div>
-    <p class="sub">断りたかったのに。<br>口から出たのは、反対のことばだった。</p>
+    <div class="txt">
+      <p class="num">01</p>
+      <h1 class="h1">なぜ、<br>「いいですよ」と<br>言ってしまうのか。</h1>
+      <div class="rule"></div>
+      <p class="sub">断りたかったのに。<br>口から出たのは、反対のことばだった。</p>
+    </div>
   </div>
 </section>
 
@@ -103,7 +107,7 @@
 
 <!-- 03 · ABSOLVIÇÃO + botão do meio -->
 <section class="band">
-  <div class="split">
+  <div class="split rev">
     <img class="fig" src="fig3.png" alt="肩の力が、少し抜ける" loading="lazy">
     <div class="txt">
       <p class="num">03</p>
@@ -116,7 +120,7 @@
 
 <!-- 04 · MECANISMO -->
 <section class="band cream">
-  <div class="split rev">
+  <div class="split">
     <img class="fig" src="fig4.png" alt="一瞬の、ためらい" loading="lazy">
     <div class="txt">
       <p class="num">04</p>
@@ -128,7 +132,7 @@
 
 <!-- 05 · CUSTO -->
 <section class="band">
-  <div class="split">
+  <div class="split rev">
     <img class="fig" src="fig5.png" alt="ひとりの、巻きもどし" loading="lazy">
     <div class="txt">
       <p class="num">05</p>
@@ -140,11 +144,13 @@
 
 <!-- 06 · VIRADA (escuro) -->
 <section class="band dark">
-  <div class="col">
-    <p class="num">06</p>
+  <div class="split">
     <img class="fig" src="fig6.png" alt="べつの角度から、見る" loading="lazy">
-    <h2 class="h">必要なのは、<br>もっと考えることではない。</h2>
-    <p class="t">ひとりで巻きもどしている場面を、<br>だれかが、べつの角度から<br>返してくれること。</p>
+    <div class="txt">
+      <p class="num">06</p>
+      <h2 class="h">必要なのは、<br>もっと考えることではない。</h2>
+      <p class="t">ひとりで巻きもどしている場面を、<br>だれかが、べつの角度から<br>返してくれること。</p>
+    </div>
   </div>
 </section>
 
