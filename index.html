@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- FUWARI pre-LP · kotowaru · v0.1 (stand-in images) -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>断れなかった、あなたへ ｜ Fuwari</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FDFCFB; --cream:#F4F1ED; --ink:#2B2520; --ink-soft:#554D43;
+    --red:#8B3A3A; --gold:#A6824C; --line:#E5DED2; --dark:#2B2520;
+    --mincho:'Shippori Mincho',serif; --gothic:'Zen Kaku Gothic New',sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--gothic); -webkit-font-smoothing:antialiased; }
+
+  .band{ width:100%; padding:40px 30px; }
+  .band.cream{ background:var(--cream); }
+  .band.dark{ background:var(--dark); }
+  .col{ max-width:600px; margin:0 auto; text-align:center; }
+
+  .num{ font-family:var(--mincho); font-size:13px; color:var(--gold); letter-spacing:.18em; margin-bottom:16px; }
+  .dark .num{ color:#C9A88A; }
+  .kick{ font-size:10px; letter-spacing:.24em; color:var(--gold); margin-bottom:24px; }
+  .rule{ width:26px; height:1.5px; background:var(--red); margin:22px auto; }
+
+  .fig{ width:190px; max-width:64%; margin:0 auto 22px; display:block; }
+
+  .h1{ font-family:var(--mincho); font-size:23px; font-weight:600; line-height:1.9; letter-spacing:.04em; }
+  .sub{ font-family:var(--mincho); font-size:15px; line-height:2.1; color:var(--ink-soft); }
+  .h{ font-family:var(--mincho); font-size:17px; font-weight:600; line-height:2; margin-bottom:14px; }
+  .t{ font-family:var(--mincho); font-size:14px; line-height:2.2; color:var(--ink-soft); }
+  .t2{ font-family:var(--mincho); font-size:14.5px; line-height:2.2; color:var(--ink); margin-top:20px; }
+  .dark .h{ color:#FDFCFB; } .dark .t{ color:#CFC7BA; }
+
+  .rows{ max-width:420px; margin:0 auto; text-align:left; }
+  .row{ font-family:var(--mincho); font-size:14.5px; line-height:1.85; display:flex; gap:12px; padding:12px 0; border-bottom:.5px solid #E2DACC; }
+  .row:last-child{ border-bottom:none; }
+  .row .mk{ color:var(--red); flex-shrink:0; }
+
+  .midlink{ margin-top:28px; font-size:13px; color:var(--red); text-decoration:underline; text-underline-offset:5px; display:inline-block; letter-spacing:.04em; }
+
+  .hanko{ width:36px; height:36px; border-radius:8px; background:var(--red); color:#fff; font-family:var(--mincho); font-size:19px; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+  .cta{ display:inline-block; width:100%; max-width:300px; padding:17px 0; background:var(--red); color:#fff; border-radius:9px; font-size:15px; font-weight:500; letter-spacing:.14em; text-decoration:none; }
+  .note{ font-size:10.5px; color:#948A7A; margin-top:13px; }
+
+  .standin{ font-size:9px; color:#B7A98F; letter-spacing:.1em; margin-top:-22px; margin-bottom:26px; }
+
+  /* ===================== DESKTOP ===================== */
+  @media (min-width:768px){
+    .band{ padding:64px 24px; }
+    .col{ max-width:660px; }
+    .fig{ width:270px; }
+    .h1{ font-size:34px; }
+    .sub{ font-size:18px; }
+    .h{ font-size:24px; margin-bottom:18px; }
+    .t{ font-size:17px; }
+    .t2{ font-size:18px; }
+    .rows{ max-width:520px; }
+    .row{ font-size:17px; padding:15px 0; }
+    .num{ font-size:15px; }
+
+    /* blocos com figura: imagem de um lado, texto do outro — usa a largura, sem vazio */
+    .split{ display:flex; align-items:center; gap:60px; max-width:900px; margin:0 auto; text-align:left; }
+    .split.rev{ flex-direction:row-reverse; }
+    .split .fig{ flex-shrink:0; margin:0; width:340px; }
+    .split .txt{ flex:1; }
+    .split .h, .split .t, .split .t2{ text-align:left; }
+    .split .num{ text-align:left; }
+    .cta{ width:auto; padding:18px 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 · A CENA -->
+<section class="band">
+  <div class="col">
+    <p class="num">01</p>
+    <!-- STAND-IN fig1 -->
+    <svg class="fig" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="240" height="200" fill="#F0E9DC"/>
+      <path d="M84 190 L88 150 M156 190 L152 150 M80 150 L160 150" stroke="#D8CBB4" stroke-width="4" stroke-linecap="round"/>
+      <path d="M92 190 C92 158 104 150 120 150 C136 150 148 158 148 190 Z" fill="#98AFA0"/>
+      <ellipse cx="120" cy="128" rx="24" ry="25" fill="#E8C9A8" transform="rotate(8 120 128)"/>
+      <path d="M96 128 C95 100 110 92 120 92 C130 92 145 100 144 128 C138 112 130 108 120 110 C108 112 100 116 96 128 Z" fill="#4E4136" transform="rotate(8 120 128)"/>
+      <ellipse cx="120" cy="182" rx="14" ry="8" fill="#E8C9A8"/>
+    </svg>
+    <p class="standin">— ilustração provisória —</p>
+    <h1 class="h1">なぜ、<br>「いいですよ」と<br>言ってしまうのか。</h1>
+    <div class="rule"></div>
+    <p class="sub">断りたかったのに。<br>口から出たのは、反対のことばだった。</p>
+  </div>
+</section>
+
+<!-- 02 · CHECKLIST -->
+<section class="band cream">
+  <div class="col">
+    <p class="num">02</p>
+    <p class="kick">こんな夜は、ありませんか</p>
+    <div class="rows">
+      <div class="row"><span class="mk">◦</span><span>「いいですよ」と言ってから、あとで悔やむ</span></div>
+      <div class="row"><span class="mk">◦</span><span>頼まれると、断る理由を探してしまう</span></div>
+      <div class="row"><span class="mk">◦</span><span>嫌われるくらいなら、引き受けたほうがいい</span></div>
+      <div class="row"><span class="mk">◦</span><span>断ったあとの空気が、こわい</span></div>
+      <div class="row"><span class="mk">◦</span><span>我慢することを、優しさだと思ってきた</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · ABSOLVIÇÃO + botão do meio -->
+<section class="band">
+  <div class="split">
+    <svg class="fig" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="240" height="200" fill="#F0E9DC"/>
+      <path d="M92 190 C92 150 104 132 120 132 C136 132 148 150 148 190 Z" fill="#98AFA0"/>
+      <path d="M118 190 C112 164 116 150 128 148 C138 147 140 156 134 160 L126 164 C120 168 122 180 124 190 Z" fill="#A9BEB0"/>
+      <ellipse cx="128" cy="150" rx="9" ry="7.5" fill="#E8C9A8"/>
+      <path d="M108 116 L108 100 C108 96 132 96 132 100 L132 116 Z" fill="#E3BF9C"/>
+      <ellipse cx="120" cy="86" rx="22" ry="23" fill="#E8C9A8"/>
+      <path d="M98 84 C97 60 112 52 120 52 C128 52 143 60 142 84 C136 70 128 66 120 68 C110 70 102 74 98 84 Z" fill="#4E4136"/>
+    </svg>
+    <div class="txt">
+      <p class="num">03</p>
+      <h2 class="h">それは、気が弱いから<br>ではありません。</h2>
+      <p class="t">断れないのは、ずっと「そうすること」で、うまくやってきたからです。</p>
+      <a class="midlink" href="#porta">もう、見てみる ›</a>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · MECANISMO -->
+<section class="band cream">
+  <div class="split rev">
+    <svg class="fig" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="240" height="200" fill="#EFE7D9"/>
+      <text x="168" y="70" font-family="Shippori Mincho, serif" font-size="52" fill="#8B3A3A">?</text>
+      <path d="M92 190 C92 150 104 132 120 132 C136 132 148 150 148 190 Z" fill="#98AFA0"/>
+      <path d="M132 190 C138 158 132 146 120 144 C138 138 150 148 148 160 L142 172 C140 180 142 186 142 190 Z" fill="#A9BEB0"/>
+      <ellipse cx="120" cy="128" rx="10" ry="8" fill="#E8C9A8"/>
+      <ellipse cx="112" cy="86" rx="22" ry="23" fill="#E8C9A8"/>
+      <path d="M90 84 C89 60 104 52 112 52 C120 52 135 60 134 82 C128 68 120 64 112 66 C102 68 94 74 90 84 Z" fill="#4E4136"/>
+    </svg>
+    <div class="txt">
+      <p class="num">04</p>
+      <h2 class="h">断るとき、人は一瞬で<br>計算している。</h2>
+      <p class="t">「これを言ったら、どう思われるか」。その計算が速すぎて、答えが出る前に「いいですよ」が口から出てしまう。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · CUSTO -->
+<section class="band">
+  <div class="split">
+    <svg class="fig" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="240" height="200" fill="#F0E9DC"/>
+      <path d="M150 40 C164 34 174 45 165 53 C158 59 171 63 162 71" fill="none" stroke="#B6807C" stroke-width="3" stroke-linecap="round"/>
+      <rect x="40" y="150" width="160" height="5" rx="2.5" fill="#D8CBB4"/>
+      <path d="M84 152 C84 128 96 114 116 112 L142 110 C154 110 154 126 142 127 L120 129 C112 131 110 141 112 152 Z" fill="#A9BEB0"/>
+      <path d="M78 152 C76 120 90 100 118 100 C146 100 158 120 156 152 Z" fill="#98AFA0"/>
+      <ellipse cx="122" cy="86" rx="22" ry="23" fill="#E8C9A8" transform="rotate(-13 122 86)"/>
+      <path d="M100 84 C99 58 114 50 124 52 C136 54 140 70 137 84 C131 70 121 66 112 68 C104 70 100 76 100 84 Z" fill="#4E4136" transform="rotate(-13 122 86)"/>
+      <ellipse cx="140" cy="108" rx="10" ry="8" fill="#E8C9A8"/>
+    </svg>
+    <div class="txt">
+      <p class="num">05</p>
+      <p class="t">断れなかった日の夜、頭のなかで何度も、同じ場面を巻きもどす。</p>
+      <p class="t2">「ああ言えばよかった」——終わったはずの場面が、ひとりのなかで、まだ続いている。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · VIRADA (escuro) -->
+<section class="band dark">
+  <div class="col">
+    <p class="num">06</p>
+    <svg class="fig" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="240" height="200" fill="#332E27"/>
+      <circle cx="120" cy="94" r="66" fill="#3E382F"/>
+      <path d="M92 190 C92 150 104 132 120 132 C136 132 148 150 148 190 Z" fill="#B58F82"/>
+      <ellipse cx="120" cy="90" rx="22" ry="23" fill="#E8C9A8"/>
+      <path d="M98 88 C97 64 112 56 120 56 C128 56 143 64 142 88 C136 74 128 70 120 72 C110 74 102 78 98 88 Z" fill="#4E4136"/>
+      <circle cx="112" cy="90" r="2.1" fill="#4A3E33"/>
+      <circle cx="128" cy="90" r="2.1" fill="#4A3E33"/>
+    </svg>
+    <h2 class="h">必要なのは、<br>もっと考えることではない。</h2>
+    <p class="t">ひとりで巻きもどしている場面を、<br>だれかが、べつの角度から<br>返してくれること。</p>
+  </div>
+</section>
+
+<!-- 07 · COMO + continuidade -->
+<section class="band">
+  <div class="col">
+    <p class="num">07</p>
+    <h2 class="h">その「べつの角度」は、<br>ふつうの場所にある。</h2>
+    <p class="t">短い一篇を読み、そのあとに、ひとこと書く。<br>すると月曜日、そのことばから書かれた一通が届く。<br>来週も、その次の週も。<br>書いたことばは、少しずつ、<br>あなたの手もとに残っていく。</p>
+  </div>
+</section>
+
+<!-- PORTA -->
+<section class="band cream" id="porta" style="padding-bottom:72px;">
+  <div class="col">
+    <div class="hanko">ふ</div>
+    <h2 class="h">その場面を、<br>べつの角度から見にいく。</h2>
+    <p class="t" style="margin-bottom:30px;">読んで、書いて、受けとる。<br>それがつづく場所へ。</p>
+    <a class="cta" href="https://app.fuwaristore.com/">見てみる</a>
+    <p class="note">無料ではじめられます</p>
+  </div>
+</section>
+
+</body>
+</html>
