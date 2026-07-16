@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FUWARI pre-LP · kotowaru · v1.0 (imagens finais) -->
+<!-- FUWARI pre-LP · kotowaru · v1.1 (degradê + espaçamento) -->
 <html lang="ja">
 <head>
 <meta charset="utf-8">
@@ -14,64 +14,74 @@
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
-  body{ background:var(--bg); color:var(--ink); font-family:var(--gothic); -webkit-font-smoothing:antialiased; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--gothic); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
 
-  .band{ width:100%; padding:40px 30px; text-align:center; }
-  .txt{ text-align:center; }
+  /* espaçamento vertical apertado (mobile) */
+  .band{ width:100%; padding:26px 0; text-align:center; }
+  .band.pad{ padding:26px 26px; }               /* blocos sem figura têm padding lateral */
   .band.cream{ background:var(--cream); }
   .band.dark{ background:var(--dark); }
-  .col{ max-width:600px; margin:0 auto; text-align:center; }
+  .col{ max-width:600px; margin:0 auto; text-align:center; padding:0 26px; }
 
-  .num{ font-family:var(--mincho); font-size:13px; color:var(--gold); letter-spacing:.18em; margin-bottom:16px; }
+  .num{ font-family:var(--mincho); font-size:12px; color:var(--gold); letter-spacing:.18em; margin-bottom:12px; }
   .dark .num{ color:#C9A88A; }
-  .kick{ font-size:10px; letter-spacing:.24em; color:var(--gold); margin-bottom:24px; }
-  .rule{ width:26px; height:1.5px; background:var(--red); margin:22px auto; }
+  .kick{ font-size:10px; letter-spacing:.24em; color:var(--gold); margin-bottom:20px; }
+  .rule{ width:24px; height:1.5px; background:var(--red); margin:14px 0; }
 
-  .fig{ width:200px; max-width:66%; height:auto; margin:0 auto 18px; display:block; }
-
-  .h1{ font-family:var(--mincho); font-size:23px; font-weight:600; line-height:1.9; letter-spacing:.04em; }
-  .sub{ font-family:var(--mincho); font-size:15px; line-height:2.1; color:var(--ink-soft); }
-  .h{ font-family:var(--mincho); font-size:17px; font-weight:600; line-height:2; margin-bottom:14px; }
-  .t{ font-family:var(--mincho); font-size:14px; line-height:2.2; color:var(--ink-soft); }
-  .t2{ font-family:var(--mincho); font-size:14.5px; line-height:2.2; color:var(--ink); margin-top:20px; }
+  .h1{ font-family:var(--mincho); font-size:21px; font-weight:600; line-height:1.85; letter-spacing:.04em; }
+  .sub{ font-family:var(--mincho); font-size:13.5px; line-height:2; color:var(--ink-soft); }
+  .h{ font-family:var(--mincho); font-size:16px; font-weight:600; line-height:1.9; margin-bottom:12px; }
+  .t{ font-family:var(--mincho); font-size:13.5px; line-height:2.05; color:var(--ink-soft); }
+  .t2{ font-family:var(--mincho); font-size:14px; line-height:2.1; color:var(--ink); margin-top:16px; }
   .dark .h{ color:#FDFCFB; } .dark .t{ color:#CFC7BA; }
 
   .rows{ max-width:420px; margin:0 auto; text-align:left; }
-  .row{ font-family:var(--mincho); font-size:14.5px; line-height:1.85; display:flex; gap:12px; padding:12px 0; border-bottom:.5px solid #E2DACC; }
+  .row{ font-family:var(--mincho); font-size:14px; line-height:1.85; display:flex; gap:12px; padding:11px 0; border-bottom:.5px solid #E2DACC; }
   .row:last-child{ border-bottom:none; }
   .row .mk{ color:var(--red); flex-shrink:0; }
 
-  .midlink{ margin-top:28px; font-size:13px; color:var(--red); text-decoration:underline; text-underline-offset:5px; display:inline-block; letter-spacing:.04em; }
+  .midlink{ margin-top:22px; font-size:13px; color:var(--red); text-decoration:underline; text-underline-offset:5px; display:inline-block; letter-spacing:.04em; }
 
-  .hanko{ width:36px; height:36px; border-radius:8px; background:var(--red); color:#fff; font-family:var(--mincho); font-size:19px; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+  .hanko{ width:36px; height:36px; border-radius:8px; background:var(--red); color:#fff; font-family:var(--mincho); font-size:19px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
   .cta{ display:inline-block; width:100%; max-width:300px; padding:17px 0; background:var(--red); color:#fff; border-radius:9px; font-size:15px; font-weight:500; letter-spacing:.14em; text-decoration:none; }
-  .note{ font-size:10.5px; color:#948A7A; margin-top:13px; }
+  .note{ font-size:10.5px; color:#948A7A; margin-top:12px; }
 
-  .standin{ font-size:9px; color:#B7A98F; letter-spacing:.1em; margin-top:-22px; margin-bottom:26px; }
+  /* ===== DUO: foto grande na borda + texto colado, borda esfumaçada (degradê) ===== */
+  .duo{ display:flex; align-items:center; gap:0; }
+  .duo.rev{ flex-direction:row-reverse; }
+  .duo .pic{ width:68%; flex:none; margin-left:-4%;
+             -webkit-mask-image:linear-gradient(to right,#000 44%,transparent 100%);
+             mask-image:linear-gradient(to right,#000 44%,transparent 100%); }
+  .duo.rev .pic{ margin-left:0; margin-right:-4%;
+             -webkit-mask-image:linear-gradient(to left,#000 44%,transparent 100%);
+             mask-image:linear-gradient(to left,#000 44%,transparent 100%); }
+  .duo .pic img{ width:100%; display:block; height:auto; }
+  .duo .txt{ flex:1; text-align:left; padding-right:18px; margin-left:-12%; position:relative; z-index:2; }
+  .duo.rev .txt{ text-align:right; padding-right:0; padding-left:18px; margin-left:0; margin-right:-12%; }
+  .duo .rule{ margin-left:0; }
+  .duo.rev .rule{ margin-left:auto; }
 
   /* ===================== DESKTOP ===================== */
   @media (min-width:768px){
-    .band{ padding:64px 24px; }
+    .band{ padding:52px 0; }
+    .band.pad{ padding:64px 24px; }
     .col{ max-width:660px; }
-    .fig{ width:270px; }
-    .h1{ font-size:34px; }
-    .sub{ font-size:18px; }
-    .h{ font-size:24px; margin-bottom:18px; }
-    .t{ font-size:17px; }
-    .t2{ font-size:18px; }
+    .h1{ font-size:32px; }
+    .sub{ font-size:17px; }
+    .h{ font-size:23px; margin-bottom:16px; }
+    .t{ font-size:16px; }
+    .t2{ font-size:17px; }
     .rows{ max-width:520px; }
-    .row{ font-size:17px; padding:15px 0; }
-    .num{ font-size:15px; }
-
-    /* blocos com figura: imagem de um lado, texto do outro — usa a largura, sem vazio */
-    .split{ display:flex; align-items:center; gap:60px; max-width:900px; margin:0 auto; text-align:left; }
-    .split.rev{ flex-direction:row-reverse; }
-    .split .fig{ flex-shrink:0; margin:0; width:340px; }
-    .split .txt{ flex:1; text-align:left; }
-    .split .h, .split .t, .split .t2, .split .h1, .split .sub, .split .num, .split .rule{ text-align:left; }
-    .split .rule{ margin-left:0; }
-    .split .num{ text-align:left; }
+    .row{ font-size:16px; padding:14px 0; }
+    .num{ font-size:14px; }
     .cta{ width:auto; padding:18px 64px; }
+
+    /* no desktop: mesma lógica duo, porém centrado num container e proporções maiores */
+    .duo{ max-width:1000px; margin:0 auto; }
+    .duo .pic{ width:52%; margin-left:0; }
+    .duo.rev .pic{ margin-right:0; }
+    .duo .txt{ margin-left:-8%; padding-right:40px; }
+    .duo.rev .txt{ margin-right:-8%; margin-left:0; padding-left:40px; padding-right:0; }
   }
 </style>
 </head>
@@ -79,8 +89,8 @@
 
 <!-- 01 · A CENA -->
 <section class="band">
-  <div class="split">
-    <img class="fig" src="fig1.png" alt="読む前の、うつむいた夜" loading="lazy">
+  <div class="duo">
+    <div class="pic"><img src="fig1.png" alt="読む前の、うつむいた夜" loading="lazy"></div>
     <div class="txt">
       <p class="num">01</p>
       <h1 class="h1">なぜ、<br>「いいですよ」と<br>言ってしまうのか。</h1>
@@ -91,7 +101,7 @@
 </section>
 
 <!-- 02 · CHECKLIST -->
-<section class="band cream">
+<section class="band pad cream">
   <div class="col">
     <p class="num">02</p>
     <p class="kick">こんな夜は、ありませんか</p>
@@ -107,8 +117,8 @@
 
 <!-- 03 · ABSOLVIÇÃO + botão do meio -->
 <section class="band">
-  <div class="split rev">
-    <img class="fig" src="fig3.png" alt="肩の力が、少し抜ける" loading="lazy">
+  <div class="duo rev">
+    <div class="pic"><img src="fig3.png" alt="肩の力が、少し抜ける" loading="lazy"></div>
     <div class="txt">
       <p class="num">03</p>
       <h2 class="h">それは、気が弱いから<br>ではありません。</h2>
@@ -120,8 +130,8 @@
 
 <!-- 04 · MECANISMO -->
 <section class="band cream">
-  <div class="split">
-    <img class="fig" src="fig4.png" alt="一瞬の、ためらい" loading="lazy">
+  <div class="duo">
+    <div class="pic"><img src="fig4.png" alt="一瞬の、ためらい" loading="lazy"></div>
     <div class="txt">
       <p class="num">04</p>
       <h2 class="h">断るとき、人は一瞬で<br>計算している。</h2>
@@ -132,8 +142,8 @@
 
 <!-- 05 · CUSTO -->
 <section class="band">
-  <div class="split rev">
-    <img class="fig" src="fig5.png" alt="ひとりの、巻きもどし" loading="lazy">
+  <div class="duo rev">
+    <div class="pic"><img src="fig5.png" alt="ひとりの、巻きもどし" loading="lazy"></div>
     <div class="txt">
       <p class="num">05</p>
       <p class="t">断れなかった日の夜、頭のなかで何度も、同じ場面を巻きもどす。</p>
@@ -144,18 +154,18 @@
 
 <!-- 06 · VIRADA (escuro) -->
 <section class="band dark">
-  <div class="split">
-    <img class="fig" src="fig6.png" alt="べつの角度から、見る" loading="lazy">
+  <div class="duo">
+    <div class="pic"><img src="fig6.png" alt="べつの角度から、見る" loading="lazy"></div>
     <div class="txt">
       <p class="num">06</p>
       <h2 class="h">必要なのは、<br>もっと考えることではない。</h2>
-      <p class="t">ひとりで巻きもどしている場面を、<br>だれかが、べつの角度から<br>返してくれること。</p>
+      <p class="t">ひとりで巻きもどしている場面を、だれかが、べつの角度から返してくれること。</p>
     </div>
   </div>
 </section>
 
 <!-- 07 · COMO + continuidade -->
-<section class="band">
+<section class="band pad" style="padding-top:44px;padding-bottom:44px;">
   <div class="col">
     <p class="num">07</p>
     <h2 class="h">その「べつの角度」は、<br>ふつうの場所にある。</h2>
@@ -164,11 +174,11 @@
 </section>
 
 <!-- PORTA -->
-<section class="band cream" id="porta" style="padding-bottom:72px;">
+<section class="band pad cream" id="porta" style="padding-top:52px;padding-bottom:66px;">
   <div class="col">
     <div class="hanko">ふ</div>
     <h2 class="h">その場面を、<br>べつの角度から見にいく。</h2>
-    <p class="t" style="margin-bottom:30px;">読んで、書いて、受けとる。<br>それがつづく場所へ。</p>
+    <p class="t" style="margin-bottom:26px;">読んで、書いて、受けとる。<br>それがつづく場所へ。</p>
     <a class="cta" href="https://app.fuwaristore.com/">見てみる</a>
     <p class="note">無料ではじめられます</p>
   </div>
