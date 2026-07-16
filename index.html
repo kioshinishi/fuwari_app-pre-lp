@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FUWARI pre-LP · kotowaru · v1.1 (degradê + espaçamento) -->
+<!-- FUWARI pre-LP · kotowaru · v1.2 (desktop apertado) -->
 <html lang="ja">
 <head>
 <meta charset="utf-8">
@@ -45,6 +45,7 @@
   .hanko{ width:36px; height:36px; border-radius:8px; background:var(--red); color:#fff; font-family:var(--mincho); font-size:19px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
   .cta{ display:inline-block; width:100%; max-width:300px; padding:17px 0; background:var(--red); color:#fff; border-radius:9px; font-size:15px; font-weight:500; letter-spacing:.14em; text-decoration:none; }
   .note{ font-size:10.5px; color:#948A7A; margin-top:12px; }
+  .band.porta{ padding-bottom:56px; }
 
   /* ===== DUO: foto grande na borda + texto colado, borda esfumaçada (degradê) ===== */
   .duo{ display:flex; align-items:center; gap:0; }
@@ -63,8 +64,8 @@
 
   /* ===================== DESKTOP ===================== */
   @media (min-width:768px){
-    .band{ padding:52px 0; }
-    .band.pad{ padding:64px 24px; }
+    .band{ padding:20px 0; }
+    .band.pad{ padding:28px 24px; }
     .col{ max-width:660px; }
     .h1{ font-size:32px; }
     .sub{ font-size:17px; }
@@ -165,7 +166,7 @@
 </section>
 
 <!-- 07 · COMO + continuidade -->
-<section class="band pad" style="padding-top:44px;padding-bottom:44px;">
+<section class="band pad">
   <div class="col">
     <p class="num">07</p>
     <h2 class="h">その「べつの角度」は、<br>ふつうの場所にある。</h2>
@@ -174,7 +175,7 @@
 </section>
 
 <!-- PORTA -->
-<section class="band pad cream" id="porta" style="padding-top:52px;padding-bottom:66px;">
+<section class="band pad cream porta" id="porta">
   <div class="col">
     <div class="hanko">ふ</div>
     <h2 class="h">その場面を、<br>べつの角度から見にいく。</h2>
