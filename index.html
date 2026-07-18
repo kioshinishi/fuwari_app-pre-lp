@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<!-- FUWARI pre-LP · kotowaru · v1.3 (desktop 5px) -->
+<!-- FUWARI pre-LP · kotowaru · v1.4 (Meta Pixel) -->
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>断れなかった、あなたへ ｜ ふわり</title>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     META PIXEL (dataset "Fuwari App" · 1785416492129966)
+     PORQUÊ AQUI: a pre-LP é a PORTA de entrada do tráfego frio, então é
+     onde o cookie _fbp NASCE. Como lp. e app. são o MESMO domínio raiz
+     (fuwaristore.com), o _fbp é first-party em .fuwaristore.com e o app
+     lê o MESMO cookie — a atribuição atravessa sozinha, sem gambiarra.
+     O PageView dispara sozinho no fbq('init') + fbq('track').
+     ⚠️ NUNCA enviar conteúdo de cliente (chat/ことば/carta) ao pixel.
+     Aqui é trivial (a LP não tem login), mas a regra vale no app também.
+     ============================================================ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1785416492129966');
+  fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1785416492129966&ev=PageView&noscript=1" alt=""></noscript>
+<!-- ===================== fim META PIXEL ===================== -->
 <style>
   :root{
     --bg:#FDFCFB; --cream:#F4F1ED; --ink:#2B2520; --ink-soft:#554D43;
@@ -124,7 +150,7 @@
       <p class="num">03</p>
       <h2 class="h">それは、気が弱いから<br>ではありません。</h2>
       <p class="t">断れないのは、ずっと「そうすること」で、うまくやってきたからです。</p>
-      <a class="midlink" href="https://app.fuwaristore.com/">もう、見てみる ›</a>
+      <a class="midlink" href="https://app.fuwaristore.com/" data-lead="meio">もう、見てみる ›</a>
     </div>
   </div>
 </section>
@@ -180,10 +206,39 @@
     <div class="hanko">ふ</div>
     <h2 class="h">その場面を、<br>べつの角度から見にいく。</h2>
     <p class="t" style="margin-bottom:26px;">読んで、書いて、受けとる。<br>それがつづく場所へ。</p>
-    <a class="cta" href="https://app.fuwaristore.com/">見てみる</a>
+    <a class="cta" href="https://app.fuwaristore.com/" data-lead="porta">見てみる</a>
     <p class="note">無料ではじめられます</p>
   </div>
 </section>
+
+<!-- ============================================================
+     LEAD — os dois botões que levam ao app (meio + porta).
+     PORQUÊ ASSIM: um <a> normal navega NA HORA e o navegador pode matar a
+     requisição do pixel antes dela sair (evento perdido). Então: segura a
+     navegação, dispara o Lead, e vai — no callback (eventCallback) ou por um
+     teto de 350ms, o que vier primeiro. O teto existe pra que um bloqueador
+     de rastreio NUNCA prenda o cliente na LP: se o pixel não responde, ele
+     navega igual. O clique nunca é perdido — o evento é que é "melhor esforço".
+     'origem' distingue os dois botões SEM criar evento novo (segue otimizável).
+     ⚠️ Zero dado pessoal no payload.
+     ============================================================ -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-lead]');
+    if(!a) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;  // abrir em nova aba: deixa passar
+    var url = a.href, saiu = false;
+    function ir(){ if(saiu) return; saiu = true; window.location.href = url; }
+    if(typeof fbq !== 'function'){ return; }   // pixel bloqueado: navegação normal, sem segurar
+    e.preventDefault();
+    try{
+      fbq('track','Lead', { origem: a.getAttribute('data-lead') }, { eventCallback: ir });
+    }catch(err){ ir(); return; }
+    setTimeout(ir, 350);
+  }, false);
+})();
+</script>
 
 </body>
 </html>
